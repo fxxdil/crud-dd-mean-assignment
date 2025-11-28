@@ -1,27 +1,76 @@
-In this DevOps task, you need to build and deploy a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular 15, and Node.js). The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database. The frontend will be an Angular application utilizing HTTPClient for communication.  
 
-The application will manage a collection of tutorials, where each tutorial includes an ID, title, description, and published status. Users will be able to create, retrieve, update, and delete tutorials. Additionally, a search box will allow users to find tutorials by title.
+# MEAN CRUD Application — DevOps Assignment
 
-## Project setup
+A full-stack **MEAN** CRUD application fully containerized using Docker and deployed on **AWS EC2** with **Docker Compose**, **Nginx reverse proxy**, and a fully automated **GitHub Actions CI/CD pipeline**.
 
-### Node.js Server
+## 🚀 Features
+- Backend: Node.js + Express (Dockerized)
+- Frontend: Angular + Nginx (Dockerized)
+- Database: MongoDB (Docker container)
+- Deployment: AWS EC2 (Ubuntu 22.04 LTS)
+- CI/CD: GitHub Actions → Docker Hub → AWS EC2 auto-deploy
 
-cd backend
+## 📁 Repository Structure
+```
+.
+├── backend/
+│   ├── Dockerfile
+│   ├── server.js
+│   ├── app/
+│   └── package.json
+│
+├── frontend/
+│   ├── Dockerfile
+│   ├── nginx.conf
+│   ├── src/
+│   └── package.json
+│
+├── docker-compose.yml
+│
+└── .github/
+    └── workflows/
+        └── cicd.yml
+```
 
-npm install
+## 🐳 Docker Compose Deployment
+Run this in AWS EC2:
+```
+docker compose pull
+docker compose up -d
+```
 
-You can update the MongoDB credentials by modifying the `db.config.js` file located in `app/config/`.
+App will be live at:
+```
+http://<EC2_PUBLIC_IP>/
+```
 
-Run `node server.js`
+## ⚙️ CI/CD Pipeline Steps
+1. Push to **main** branch  
+2. GitHub Actions builds Docker images  
+3. Images pushed to Docker Hub  
+4. GitHub Actions SSHes into AWS  
+5. AWS pulls latest images  
+6. Containers restart automatically  
 
-### Angular Client
+## 🔐 GitHub Secrets Required
+| Secret | Description |
+|--------|-------------|
+| DOCKERHUB_USERNAME | Your Docker Hub username |
+| DOCKERHUB_TOKEN | Docker Hub Access Token |
+| VM_HOST | EC2 Public IP |
+| VM_USER | ubuntu |
+| VM_SSH_KEY | Private key (.pem) content |
 
-cd frontend
+## 📸 Screenshots to Include (Important for Submission)
+- GitHub Actions successful run  
+- Docker Hub pushed images  
+- EC2 instance running  
+- `docker ps` output  
+- Application UI in browser  
+- Nginx config  
+- docker-compose.yml  
+- Repository structure screenshot  
 
-npm install
-
-Run `ng serve --port 8081`
-
-You can modify the `src/app/services/tutorial.service.ts` file to adjust how the frontend interacts with the backend.
-
-Navigate to `http://localhost:8081/`
+## 📌 Notes
+- Do not delete the EC2 instance  
+- Stopping the instance is allowed  
