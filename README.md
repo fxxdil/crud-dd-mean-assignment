@@ -3,14 +3,14 @@
 
 A full-stack **MEAN** CRUD application fully containerized using Docker and deployed on **AWS EC2** with **Docker Compose**, **Nginx reverse proxy**, and a fully automated **GitHub Actions CI/CD pipeline**.
 
-## 🚀 Features
+##  Features
 - Backend: Node.js + Express (Dockerized)
 - Frontend: Angular + Nginx (Dockerized)
 - Database: MongoDB (Docker container)
 - Deployment: AWS EC2 (Ubuntu 22.04 LTS)
 - CI/CD: GitHub Actions → Docker Hub → AWS EC2 auto-deploy
 
-## 📁 Repository Structure
+## Repository Structure
 ```
 .
 ├── backend/
@@ -32,7 +32,7 @@ A full-stack **MEAN** CRUD application fully containerized using Docker and depl
         └── cicd.yml
 ```
 
-## 🐳 Docker Compose Deployment
+##  Docker Compose Deployment
 Run this in AWS EC2:
 ```
 docker compose pull
@@ -41,10 +41,10 @@ docker compose up -d
 
 App will be live at:
 ```
-http://<EC2_PUBLIC_IP>/
+http://13.126.38.104/
 ```
 
-## ⚙️ CI/CD Pipeline Steps
+# CI/CD Pipeline Steps
 1. Push to **main** branch  
 2. GitHub Actions builds Docker images  
 3. Images pushed to Docker Hub  
@@ -52,7 +52,7 @@ http://<EC2_PUBLIC_IP>/
 5. AWS pulls latest images  
 6. Containers restart automatically  
 
-## 🔐 GitHub Secrets Required
+# GitHub Secrets Required
 | Secret | Description |
 |--------|-------------|
 | DOCKERHUB_USERNAME | Your Docker Hub username |
@@ -61,15 +61,21 @@ http://<EC2_PUBLIC_IP>/
 | VM_USER | ubuntu |
 | VM_SSH_KEY | Private key (.pem) content |
 
-## 📸 Screenshots to Include (Important for Submission)
+## 📸 Screenshots to Include 
 - GitHub Actions successful run  
-- Docker Hub pushed images  
+
+- Docker Hub pushed images
+![alt text](image.png)  
 - EC2 instance running  
+![alt text](image-1.png)
 - `docker ps` output  
+![alt text](image-2.png)
 - Application UI in browser  
-- Nginx config  
+![alt text](image-3.png)
 - docker-compose.yml  
+![alt text](image-4.png)
 - Repository structure screenshot  
+![alt text](image-5.png)
 
 ## 📌 Notes
 - Do not delete the EC2 instance  
