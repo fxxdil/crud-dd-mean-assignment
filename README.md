@@ -65,17 +65,18 @@ http://13.126.38.104/
 - GitHub Actions successful run  
 
 - Docker Hub pushed images
-![alt text](image.png)  
+![alt text](image-7.png)
 - EC2 instance running  
-![alt text](image-1.png)
+![alt text](image-8.png)
 - `docker ps` output  
-![alt text](image-2.png)
+![alt text](image-9.png)
 - Application UI in browser  
-![alt text](image-3.png)
+![alt text](image-10.png)
 - docker-compose.yml  
-![alt text](image-4.png)
-- Repository structure screenshot  
-![alt text](image-5.png)
+![alt text](image-11.png)
+- Repository structure screenshot
+![alt text](image-12.png)  
+
 
 ## 📌 Notes
 - Do not delete the EC2 instance  
